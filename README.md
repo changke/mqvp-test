@@ -1,6 +1,6 @@
-# [Media Query / Viewport Test]
+# Media Query / Viewport Test
 
-A simple page for testing media query maching and viewport information on different browsers.
+A simple page for testing media query maching and displaying viewport information in different browsers.
 
 Built on [HTML5 Boilerplate](http://html5boilerplate.com/).
 
