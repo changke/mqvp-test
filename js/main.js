@@ -1,12 +1,25 @@
-var showWidthInfo = function() {
-    var width = viewportSize.getWidth();
-    $('.info').html('Width: ' + width + 'px');
+// Detect features with Modernizr
+
+var showInfo = function() {
+    var info = {
+        width: viewportSize.getWidth(),
+        cssTransitions: Modernizr.csstransitions,
+        cssTransforms3d: Modernizr.csstransforms3d
+    };
+
+    var h = '<ul>';
+    $.each(info, function(k, v) {
+        h += '<li>' + k + ': ' + v + '</li>';
+    });
+    h += '</ul>';
+
+    $('.info').html(h);
 };
 
 $(document).ready(function() {
-    showWidthInfo();
-});
+    showInfo();
 
-$(window).resize(function() {
-    showWidthInfo();
+    $(window).resize(function() {
+        showInfo();
+    });
 });
