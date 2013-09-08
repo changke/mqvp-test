@@ -1,15 +1,17 @@
 // Detect features with Modernizr
 
 var showInfo = function() {
+    var htmlClass = $('html').attr('class');
+    var fts = $.trim(htmlClass).split(' ').join(' / ');
+
     var info = {
-        width: viewportSize.getWidth(),
-        cssTransitions: Modernizr.csstransitions,
-        cssTransforms3d: Modernizr.csstransforms3d
+        Width: viewportSize.getWidth(),
+        Features: fts
     };
 
     var h = '<ul>';
     $.each(info, function(k, v) {
-        h += '<li>' + k + ': ' + v + '</li>';
+        h += '<li><b>' + k + '</b>: ' + v + '</li>';
     });
     h += '</ul>';
 
